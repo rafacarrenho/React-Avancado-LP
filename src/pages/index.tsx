@@ -15,14 +15,22 @@ import JsonSchema from 'components/JsonSchema'
 import { GetStaticProps } from 'next'
 import client from 'graphql/client'
 import GET_LANDING_PAGE from 'graphql/queries/getLandingPage'
+import { LandingPageProps } from 'types/api'
 
-const Index = () => (
+const Index = ({
+  logo,
+  header,
+  sectionAboutProject,
+  sectionTech,
+  sectionConcepts,
+  sectionModules
+}: LandingPageProps) => (
   <>
-    <SectionHero />
-    <SectionAboutProject />
-    <SectionTech />
-    <SectionConcepts />
-    <SectionModules />
+    <SectionHero logo={logo} header={header} />
+    <SectionAboutProject sectionAboutProject={sectionAboutProject} />
+    <SectionTech sectionTech={sectionTech} />
+    <SectionConcepts sectionConcepts={sectionConcepts} />
+    <SectionModules sectionModules={sectionModules} />
     <SectionAgenda />
     <PricingBox />
     <SectionAboutUs />
@@ -36,7 +44,6 @@ const Index = () => (
 export const getStaticProps: GetStaticProps = async () => {
   const { landingPage } = await client.request(GET_LANDING_PAGE)
 
-  console.log(landingPage)
   return {
     props: {
       ...landingPage
