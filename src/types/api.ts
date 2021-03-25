@@ -3,6 +3,13 @@ export type LogoProps = {
   url: string
 }
 
+export type TechIcons = {
+  icon: {
+    url: string
+  }
+  title: string
+}
+
 export type HeaderProps = {
   title: string
   description: string
@@ -27,14 +34,7 @@ export type SectionAboutProjectProps = {
 
 export type SectionTechProps = {
   title: string
-  techIcons: [
-    {
-      icon: {
-        url: string
-      }
-      title: string
-    }
-  ]
+  techIcons: TechIcons[]
 }
 
 export type SectionConceptsProps = {
@@ -46,15 +46,20 @@ export type SectionConceptsProps = {
   ]
 }
 
+export type Modules = {
+  title: string
+  subtitle: string
+  description: string
+}
+
 export type SectionModulesProps = {
   title: string
-  modules: [
-    {
-      title: string
-      subtitle: string
-      description: string
-    }
-  ]
+  modules: Modules[]
+}
+
+export type SectionScheduleProps = {
+  title: string
+  description: string
 }
 
 export type LandingPageProps = {
@@ -64,4 +69,5 @@ export type LandingPageProps = {
   sectionTech: SectionTechProps
   sectionConcepts: SectionConceptsProps
   sectionModules: SectionModulesProps
+  sectionSchedule: SectionScheduleProps
 }
