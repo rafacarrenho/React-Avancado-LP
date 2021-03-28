@@ -9,6 +9,8 @@ const Footer = () => (
     <Container>
       <p>
         Desenvolvido por{' '}
+        <a href="https://rcarrenho.com.br/">Rafael Carrenho </a>com base no
+        curso React Avançado de{' '}
         <a href="https://willianjusten.com.br/">Willian Justen </a>e
         <a href="https://guilouro.dev"> Guilherme Louro</a>
       </p>
